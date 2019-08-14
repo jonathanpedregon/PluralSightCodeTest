@@ -1,9 +1,5 @@
 ﻿using PackageInstaller.Models;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PackageInstaller.Handlers
 {
@@ -16,7 +12,16 @@ namespace PackageInstaller.Handlers
     {
         public IList<Package> GetPackagesFromInput(string[] userInput)
         {
-            throw new NotImplementedException();
+            var packages = new List<Package>();
+            foreach (var userInputString in userInput)
+            {
+                var splitString = userInputString.Split(':');
+                var packageName = splitString[0].Trim();
+                var dependency = splitString[1].Trim();
+                var package = new Package(packageName, dependency);
+                packages.Add(package);
+            }
+            return packages;
         }
     }
 }
