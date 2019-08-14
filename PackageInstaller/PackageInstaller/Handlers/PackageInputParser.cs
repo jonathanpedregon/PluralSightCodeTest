@@ -15,13 +15,19 @@ namespace PackageInstaller.Handlers
             var packages = new List<Package>();
             foreach (var userInputString in userInput)
             {
-                var splitString = userInputString.Split(':');
-                var packageName = splitString[0].Trim();
-                var dependency = splitString[1].Trim();
-                var package = new Package(packageName, dependency);
+                var package = GetPackageFromInput(userInputString);
                 packages.Add(package);
             }
             return packages;
+        }
+
+        public static Package GetPackageFromInput(string userInputString)
+        {
+            var splitString = userInputString.Split(':');
+            var packageName = splitString[0].Trim();
+            var dependency = splitString[1].Trim();
+            var package = new Package(packageName, dependency);
+            return package;
         }
     }
 }
