@@ -1,0 +1,11 @@
+C:\Users\Jonathan\Desktop\PluralSight\PluralSightCodeTest\PackageInstaller\PackageInstaller\bin\Debug\PackageInstaller.exe.config
+C:\Users\Jonathan\Desktop\PluralSight\PluralSightCodeTest\PackageInstaller\PackageInstaller\bin\Debug\PackageInstaller.exe
+C:\Users\Jonathan\Desktop\PluralSight\PluralSightCodeTest\PackageInstaller\PackageInstaller\bin\Debug\PackageInstaller.pdb
+C:\Users\Jonathan\Desktop\PluralSight\PluralSightCodeTest\PackageInstaller\PackageInstaller\bin\Debug\Autofac.dll
+C:\Users\Jonathan\Desktop\PluralSight\PluralSightCodeTest\PackageInstaller\PackageInstaller\bin\Debug\Autofac.pdb
+C:\Users\Jonathan\Desktop\PluralSight\PluralSightCodeTest\PackageInstaller\PackageInstaller\bin\Debug\Autofac.xml
+C:\Users\Jonathan\Desktop\PluralSight\PluralSightCodeTest\PackageInstaller\PackageInstaller\obj\Debug\PackageInstaller.csprojAssemblyReference.cache
+C:\Users\Jonathan\Desktop\PluralSight\PluralSightCodeTest\PackageInstaller\PackageInstaller\obj\Debug\PackageInstaller.csproj.CoreCompileInputs.cache
+C:\Users\Jonathan\Desktop\PluralSight\PluralSightCodeTest\PackageInstaller\PackageInstaller\obj\Debug\PackageInstaller.csproj.CopyComplete
+C:\Users\Jonathan\Desktop\PluralSight\PluralSightCodeTest\PackageInstaller\PackageInstaller\obj\Debug\PackageInstaller.exe
+C:\Users\Jonathan\Desktop\PluralSight\PluralSightCodeTest\PackageInstaller\PackageInstaller\obj\Debug\PackageInstaller.pdb
