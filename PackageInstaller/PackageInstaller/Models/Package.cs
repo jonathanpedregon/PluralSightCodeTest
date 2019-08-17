@@ -10,5 +10,17 @@
             Name = name;
             Dependency = dependency;
         }
+
+        public override bool Equals(object obj)
+        {
+            if (!(obj is Package otherPackage))
+                return false;
+            return Name == otherPackage.Name && Dependency == otherPackage.Dependency;
+        }
+
+        public override int GetHashCode()
+        {
+            return Name.GetHashCode() ^ Dependency.GetHashCode();
+        }
     }
 }
