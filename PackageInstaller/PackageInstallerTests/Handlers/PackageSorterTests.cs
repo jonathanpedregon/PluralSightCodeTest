@@ -28,12 +28,39 @@ namespace PackageInstallerTests.Handlers
                 new Package("KittenService", "CamelCaser"),
                 new Package("CamelCaser", "")
             };
+            var expectedPackages = new List<string> {"CamelCaser", "KittenService"};
 
             var orderedPackages = PackageSorter.GetOrderedPackages(packages);
 
-            Assert.AreEqual(2, orderedPackages.Count);
-            Assert.AreEqual("CamelCaser", orderedPackages.ElementAt(0));
-            Assert.AreEqual("KittenService", orderedPackages.ElementAt(0));
+            AssertCollectionsAreEqual(expectedPackages, orderedPackages);
+        }
+
+        [Test]
+        public void GetOrderedPackages_SecondExample()
+        {
+            var packages = new List<Package>
+            {
+                new Package("KittenService", ""),
+                new Package("Leetmeme", "Cyberportal"),
+                new Package("Cyberportal", "Ice"),
+                new Package("CamelCaser", "KittenService"),
+                new Package("Fraudstream", "Leetmeme"),
+                new Package("Ice", "")
+            };
+            var expectedPackages = new List<string> { "KittenService", "CamelCaser", "Ice", "Cyberportal", "Leetmeme", "Fraudstream" };
+
+            var orderedPackages = PackageSorter.GetOrderedPackages(packages);
+
+            AssertCollectionsAreEqual(expectedPackages, orderedPackages);
+        }
+
+        private void AssertCollectionsAreEqual(IList<string> expected, IList<string> actual)
+        {
+            Assert.AreEqual(expected.Count, actual.Count);
+            for (var i = 0; i < expected.Count; i++)
+            {
+                Assert.AreEqual(expected.ElementAt(i), actual.ElementAt(i));
+            }
         }
     }
 }
