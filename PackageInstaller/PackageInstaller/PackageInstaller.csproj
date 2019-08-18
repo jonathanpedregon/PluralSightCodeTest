@@ -50,6 +50,7 @@
     <Compile Include="Exceptions\CircularDependencyException.cs" />
     <Compile Include="Handlers\PackageInputParser.cs" />
     <Compile Include="Handlers\PackageSorter.cs" />
+    <Compile Include="Handlers\PackageStringGenerator.cs" />
     <Compile Include="Models\Package.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
