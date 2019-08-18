@@ -62,6 +62,7 @@
   <ItemGroup>
     <Compile Include="Handlers\PackageInputParserTests.cs" />
     <Compile Include="Handlers\PackageSorterTests.cs" />
+    <Compile Include="Handlers\PackageStringGeneratorTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
