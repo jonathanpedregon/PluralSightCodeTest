@@ -13,7 +13,7 @@ namespace PackageInstaller
             containerBuilder.RegisterAssemblyTypes(assembly).AsImplementedInterfaces();
             var container = containerBuilder.Build();
             var packageInstaller = container.Resolve<IPackageInstaller>();
-            var output = packageInstaller.InstallPackages(args[0]);
+            var output = packageInstaller.GetPackageInstallationString(args);
         }
     }
 }

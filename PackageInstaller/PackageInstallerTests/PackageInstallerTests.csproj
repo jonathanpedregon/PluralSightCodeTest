@@ -60,6 +60,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\PackageInstallerTests.cs" />
     <Compile Include="Handlers\PackageInputParserTests.cs" />
     <Compile Include="Handlers\PackageSorterTests.cs" />
     <Compile Include="Handlers\PackageStringGeneratorTests.cs" />
@@ -68,9 +69,7 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Controllers\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\PackageInstaller\PackageInstaller.csproj">
       <Project>{913917EC-41B4-47DE-8358-C3865F8534D6}</Project>
