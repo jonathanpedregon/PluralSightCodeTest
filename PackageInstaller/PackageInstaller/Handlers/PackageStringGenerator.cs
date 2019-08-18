@@ -12,7 +12,7 @@ namespace PackageInstaller.Handlers
     {
         public string GeneratePackageString(IList<string> packageList)
         {
-            throw new NotImplementedException();
+            return string.Join(", ", packageList);
         }
     }
 }
