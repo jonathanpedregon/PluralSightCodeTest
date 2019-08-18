@@ -1,5 +1,6 @@
 ﻿using PackageInstaller.Models;
 using System.Collections.Generic;
+using System.Text.RegularExpressions;
 
 namespace PackageInstaller.Handlers
 {
@@ -15,6 +16,8 @@ namespace PackageInstaller.Handlers
             var packages = new List<Package>();
             foreach (var userInputString in userInput)
             {
+                if(Regex.IsMatch(userInputString, "[[\\]]"))
+                    continue;
                 var package = GetPackageFromInput(userInputString);
                 packages.Add(package);
             }
@@ -23,6 +26,7 @@ namespace PackageInstaller.Handlers
 
         public static Package GetPackageFromInput(string userInputString)
         {
+            userInputString = userInputString.Replace(",", string.Empty);
             var splitString = userInputString.Split(':');
             var packageName = splitString[0].Trim();
             var dependency = splitString[1].Trim();

@@ -27,7 +27,7 @@ namespace PackageInstallerTests.Controllers
         [Test]
         public void GetPackageInstallationString_ValidInput()
         {
-            var input = new [] {"TestPackage: "};
+            var input = new [] {"[", "TestPackage: ", "]"};
             InputParser.Setup(x => x.GetPackagesFromInput(input)).Returns(new List<Package>());
             PackageSorter.Setup(x => x.GetOrderedPackages(new List<Package>())).Returns(new List<string>());
             StringGenerator.Setup(x => x.GeneratePackageString(new List<string>())).Returns("TestString");
@@ -43,7 +43,7 @@ namespace PackageInstallerTests.Controllers
         [Test]
         public void GetPackageInstallationString_Exception()
         {
-            var input = new[] { "TestPackage: " };
+            var input = new[] { "[", "TestPackage: ", "]" };
             InputParser.Setup(x => x.GetPackagesFromInput(input)).Returns(new List<Package>());
             var exceptionMessage = "Test Exception";
             PackageSorter.Setup(x => x.GetOrderedPackages(new List<Package>()))
