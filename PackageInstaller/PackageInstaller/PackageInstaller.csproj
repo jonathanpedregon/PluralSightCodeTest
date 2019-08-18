@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\PackageInstaller.cs" />
+    <Compile Include="Exceptions\CircularDependencyException.cs" />
     <Compile Include="Handlers\PackageInputParser.cs" />
     <Compile Include="Handlers\PackageSorter.cs" />
     <Compile Include="Models\Package.cs" />

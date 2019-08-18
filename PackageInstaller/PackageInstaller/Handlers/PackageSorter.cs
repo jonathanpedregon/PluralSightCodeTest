@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using PackageInstaller.Exceptions;
 using PackageInstaller.Models;
 
 namespace PackageInstaller.Handlers
@@ -24,6 +25,12 @@ namespace PackageInstaller.Handlers
                 dependencyLists.Add(GetDependencyList(dependencyList));
             }
             var combinedDependencyList = CombineDependencyLists(dependencyLists);
+            var duplicateValues = combinedDependencyList.GroupBy(x => x).Where(y => y.Count() > 1);
+            if (duplicateValues.Any())
+            {
+                throw new CircularDependencyException($"Invalid Input: The package {duplicateValues.First().Key} is part of a circular dependency");
+            }
+
             return combinedDependencyList;
         }
 

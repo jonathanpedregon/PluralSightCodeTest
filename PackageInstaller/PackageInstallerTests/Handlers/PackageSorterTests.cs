@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using NUnit.Framework;
+using PackageInstaller.Exceptions;
 using PackageInstaller.Handlers;
 using PackageInstaller.Models;
 
@@ -128,6 +129,22 @@ namespace PackageInstallerTests.Handlers
 
             AssertCollectionsAreEqual(expectedCombinedList, combinedDependencyList);
 
+        }
+
+        [Test]
+        public void GetOrderedPackages_WithCircularDependencies()
+        {
+            var packages = new List<Package>
+            {
+                new Package("KittenService", ""),
+                new Package("Leetmeme", "Cyberportal"),
+                new Package("Cyberportal", "Ice"),
+                new Package("CamelCaser", "KittenService"),
+                new Package("Fraudstream", ""),
+                new Package("Ice", "Leetmeme")
+            };
+
+            Assert.Throws<CircularDependencyException>(() => PackageSorter.GetOrderedPackages(packages));
         }
 
         private static List<LinkedList<string>> GetDependencyCollection()
